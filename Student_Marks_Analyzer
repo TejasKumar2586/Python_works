@@ -1,0 +1,28 @@
+students = {}
+
+n = int(input("Enter the Number of Student:"))
+
+for i in range(n):
+    name = input("Enter Student Name: ")
+    marks = int(input("Enter Marks: "))
+    students[name] = marks
+
+total = sum(students.values())
+average = total / n
+
+higest = max(students, key=students.get)
+lowest = min(students, key=students.get)
+
+def get_grade(mark):
+    if mark >= 90:
+        return "A"
+    elif mark >= 75:
+        return "B"
+    elif mark >= 50:
+        return "C"
+    else:
+        return "FAIL"
+    
+print("\n-----STUDENT REPORT-----")
+print("Topper: ",higest,"-",students[higest])
+print("Lowest Scorer: ",lowest,"-",students[lowest])
